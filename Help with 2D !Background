@@ -1,0 +1,20 @@
+#Link to the video that'll show just how bad it looks, ignore the bad art sincee immm slowwlyy working on it; I want to get the actual game working before making it pretty:
+https://files.catbox.moe/lmsi7y.mp4
+
+
+So i've been trying to do this background sidescroller for a while and I just can't get it working the way I want.
+This is the code right now:
+
+var skySpeed = 1000
+var speedMountain = 150
+var speedHills = 320
+var speedPlains = 400
+
+func _process(delta: float) -> void:
+	var cameraX = $"../CharacterBody2D/Camera2D".global_position.x
+	sky.global_position.x = $"../CharacterBody2D/Camera2D".global_position.x
+	mountain.global_position.x = move_toward(mountain.global_position.x,cameraX,delta * speedMountain)
+	plains.global_position.x = move_toward(mountain.global_position.x,cameraX,delta * speedPlains)
+
+It should slightly follow the camera when the player is moving to create this immersive dynamic, but I cant quite remember a game that does it like this. I dont remember...I think Hollow Knight did?
+Anyway, it looks really snappy and sloppy and I cant get it looking right...and Id like to avoid just making another generic parallax scroller. Can anyone lend a hand?
